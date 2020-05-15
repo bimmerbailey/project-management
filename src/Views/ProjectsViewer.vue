@@ -13,14 +13,13 @@
     @Component({
         components: {
             HelloWorld,
-        }
+        },
     })
     export default class ProjectsViewer extends Vue {
 
         constructor() {
             super();
         }
-
 
     }
 </script>

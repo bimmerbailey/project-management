@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <AddProject></AddProject>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -31,8 +32,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import AddProject from '@/components/AddProject.vue';
 
-@Component
+@Component({
+  components: {
+    AddProject,
+  }
+})
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
 }

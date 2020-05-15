@@ -43,7 +43,7 @@
 
   @Component({
     components: {
-    }
+    },
   })
   export default class App extends Vue {
 
