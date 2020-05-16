@@ -1,18 +1,16 @@
 <template>
     <div>
-        <HelloWorld>
-
-        </HelloWorld>
+        <AddProject></AddProject>
     </div>
 </template>
 
 <script lang="ts">
     import { Component, Vue } from 'vue-property-decorator';
-    import HelloWorld from '@/components/HelloWorld.vue'
+    import AddProject from "@/components/AddProject.vue";
 
     @Component({
         components: {
-            HelloWorld,
+            AddProject,
         },
     })
     export default class ProjectsViewer extends Vue {
