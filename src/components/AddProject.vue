@@ -8,12 +8,12 @@
         <md-field>
             <md-icon>note_add</md-icon>
             <label>Project Name</label>
-            <md-input v-model="projectName"></md-input>
+            <md-input :model="projectName"></md-input>
         </md-field>
         <md-field>
             <md-icon>attach_money</md-icon>
             <label>Project Amount</label>
-            <md-input v-model="projectAmount"></md-input>
+            <md-input :model="projectAmount"></md-input>
         </md-field>
     </div>
 </template>
@@ -23,6 +23,7 @@
 
   @Component
   export default class AddProject extends Vue {
+    //TODO: Look into this being mutated, maybe use data or computed
     @Prop({}) private selectedData!: Date;
 
     private projectAmount!: number;

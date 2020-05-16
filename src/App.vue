@@ -22,7 +22,7 @@
           </md-list-item>
           <md-list-item>
             <md-icon>add</md-icon>
-            <span class="md-list-item-text"><router-link to="/add">Add</router-link></span>
+            <span class="md-list-item-text"><router-link to="/addProject">Add</router-link></span>
           </md-list-item>
           <md-list-item>
             <md-icon>add</md-icon>
