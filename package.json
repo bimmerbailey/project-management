@@ -9,6 +9,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vue/cli": "^4.3.1",
+    "chai": "^4.2.0",
     "core-js": "^3.6.4",
     "lodash": "^4.17.15",
     "vue": "^2.6.11",
@@ -21,7 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "@vue/cli-plugin-babel": "~4.3.0",
-    "@vue/cli-plugin-e2e-cypress": "~4.3.0",
+    "@vue/cli-plugin-e2e-cypress": "^4.3.1",
     "@vue/cli-plugin-eslint": "~4.3.0",
     "@vue/cli-plugin-typescript": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
@@ -31,6 +33,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
+    "ts-mocha": "^7.0.0",
     "typescript": "~3.8.3",
     "vue-template-compiler": "^2.6.11"
   },
