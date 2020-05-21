@@ -24,10 +24,10 @@
             <md-icon>add</md-icon>
             <span class="md-list-item-text"><router-link to="/addProject">Add</router-link></span>
           </md-list-item>
-          <md-list-item>
-            <md-icon>add</md-icon>
-            <span class="md-list-item-text"><router-link to="/viewer">Viewer</router-link></span>
-          </md-list-item>
+<!--          <md-list-item>-->
+<!--            <md-icon>add</md-icon>-->
+<!--            <span class="md-list-item-text"><router-link to="/viewer">Viewer</router-link></span>-->
+<!--          </md-list-item>-->
         </md-list>
       </md-app-drawer>
       <md-app-content>

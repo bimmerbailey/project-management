@@ -12,6 +12,8 @@
     "@vue/cli": "^4.3.1",
     "chai": "^4.2.0",
     "core-js": "^3.6.4",
+    "gantt-elastic": "^1.0.11",
+    "gantt-elastic-header": "^0.1.11",
     "lodash": "^4.17.15",
     "mocha": "^7.1.2",
     "vue": "^2.6.11",
