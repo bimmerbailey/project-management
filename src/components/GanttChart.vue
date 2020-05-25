@@ -1,5 +1,8 @@
 <template>
-    <q-page class="q-pa-sm">
+    <div>
+<!--        <md-toolbar class="md-transparent">-->
+<!--            <h3 class="md-title">This will be project name</h3>-->
+<!--        </md-toolbar>-->
         <gantt-elastic
                 :options="options"
                 :tasks="tasks"
@@ -7,11 +10,12 @@
                 @options-changed="optionsUpdate"
                 @dynamic-style-changed="styleUpdate"
         >
-            <gantt-header slot="header"></gantt-header>
+            <gantt-header slot="header" :options="this.options"></gantt-header>
         </gantt-elastic>
         <div class="q-mt-md"/>
-        <q-btn @click="addTask" icon="mdi-plus" label="Add task"/>
-    </q-page>
+        <md-button class="md-raised" @click="addTask">Add Task</md-button>
+        <!--        <q-btn @click="addTask" icon="mdi-plus" label="Add task"/>-->
+    </div>
 </template>
 
 <script>
@@ -21,6 +25,47 @@
     import GanttElastic from "gantt-elastic";
     import GanttHeader from "gantt-elastic-header";
     import dayjs from "dayjs";
+
+    export default {
+        name: "GanttChart",
+        components: {
+            GanttElastic,
+            GanttHeader
+        },
+        data() {
+            return {
+                tasks,
+                options,
+                dynamicStyle: {},
+                lastId: 16
+            };
+        },
+        methods: {
+            // TODO: This will be moved to AddProject.vue
+            addTask() {
+                this.tasks.push({
+                    id: this.lastId++,
+                    label:
+                        '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Yeaahh! you have added a task bro!</a>',
+                    user:
+                        '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Awesome!</a>',
+                    start: getDate(24 * 3),
+                    duration: 1 * 24 * 60 * 60 * 1000,
+                    percent: 50,
+                    type: "project"
+                });
+            },
+            tasksUpdate(tasks) {
+                this.tasks = tasks;
+            },
+            optionsUpdate(options) {
+                this.options = options;
+            },
+            styleUpdate(style) {
+                this.dynamicStyle = style;
+            }
+        }
+    };
 
     // just helper to get current dates
     function getDate(hours) {
@@ -39,6 +84,8 @@
         return new Date(timeStamp + hours * 60 * 60 * 1000).getTime();
     }
 
+    // TODO: Make this its own ts file
+    // GanttHeader.defaultOptions.label = 'Title';
     let tasks = [
         {
             id: 1,
@@ -48,8 +95,8 @@
             start: getDate(-24 * 5),
             duration: 15 * 24 * 60 * 60 * 1000,
             percent: 85,
-            type: "project"
-            //collapsed: true,
+            type: "project",
+            collapsed: true,
         },
         {
             id: 2,
@@ -240,8 +287,8 @@
         maxRows: 100,
         maxHeight: 500,
         title: {
-            label: "Your project title as html (link or whatever...)",
-            html: false
+            label: "This is a title",
+            html: true
         },
         row: {
             height: 24
@@ -330,47 +377,10 @@
             "Display task list": "Task list"
         }
     };
-    export default {
-        name: "Gantt",
-        components: {
-            GanttElastic,
-            GanttHeader
-        },
-        data() {
-            return {
-                tasks,
-                options,
-                dynamicStyle: {},
-                lastId: 16
-            };
-        },
-        methods: {
-            addTask() {
-                this.tasks.push({
-                    id: this.lastId++,
-                    label:
-                        '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Yeaahh! you have added a task bro!</a>',
-                    user:
-                        '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Awesome!</a>',
-                    start: getDate(24 * 3),
-                    duration: 1 * 24 * 60 * 60 * 1000,
-                    percent: 50,
-                    type: "project"
-                });
-            },
-            tasksUpdate(tasks) {
-                this.tasks = tasks;
-            },
-            optionsUpdate(options) {
-                this.options = options;
-            },
-            styleUpdate(style) {
-                this.dynamicStyle = style;
-            }
-        }
-    };
+
 </script>
 
 <style>
     /*TODO: Style the gantt chart to be dark to match*/
+
 </style>
