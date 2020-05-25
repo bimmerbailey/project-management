@@ -6,18 +6,24 @@
             md-label="Recent"
             md-description="No recently accessed project data.">
     </md-empty-state>
+<!--    <GanttChart></GanttChart>-->
 </template>
 
 <script lang="ts">
     import { Component, Vue } from "vue-property-decorator";
+    // import GanttChart from '@/components/GanttChart.vue';
 
-    @Component
+    @Component({
+      components: {
+        // GanttChart,
+      }
+    })
      export default class Home extends Vue {
 
     }
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

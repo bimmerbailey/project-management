@@ -21,8 +21,8 @@
             <span class="md-list-item-text"><router-link to="/">Home</router-link></span>
           </md-list-item>
           <md-list-item>
-            <md-icon>add</md-icon>
-            <span class="md-list-item-text"><router-link to="/addProject">Add</router-link></span>
+            <md-icon>event</md-icon>
+            <span class="md-list-item-text"><router-link to="/viewProjects">Viewer</router-link></span>
           </md-list-item>
 <!--          <md-list-item>-->
 <!--            <md-icon>add</md-icon>-->
@@ -58,7 +58,7 @@
 <style lang="scss">
 
   .md-drawer {
-    width: 25%;
+    width: 15%;
     max-width: calc(50vw - 125px);
     min-height: 60vh;
   }

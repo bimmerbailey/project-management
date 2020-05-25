@@ -14,8 +14,8 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/addProject',
-      name: 'addProject',
+      path: '/viewProjects',
+      name: 'viewProjects',
       component: () => import( './views/ProjectsViewer.vue'),
     },
     // {
@@ -23,5 +23,5 @@ export default new Router({
     //   name: 'viewer',
     //   component: () => import( './views/ProjectsViewer.vue'),
     // },
-  ]
-})
+  ],
+});
