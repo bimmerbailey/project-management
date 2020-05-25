@@ -55,9 +55,8 @@ interface TaskData {
   };
 }
 
-export function DefaultProjectData(): ({ duration: number; collapsed: boolean; start: number; style: { base: { fill: null; stroke: null } }; id: number; label: string; type: string; user: string; percent: number } | { duration: number; collapsed: boolean; start: number; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; start: any; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: any; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; collapsed: boolean; start: any; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; collapsed: boolean; start: any; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; start: any; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; start: any; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; start: any; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: any; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: any; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; start: any; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: any; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: any; id: number; label: string; type: string; user: string; percent: number })[] {
-
-
+// tslint:disable-next-line:max-line-length
+export function DefaultProjectData(): Array<{ duration: number; collapsed: boolean; start: number; style: { base: { fill: null; stroke: null } }; id: number; label: string; type: string; user: string; percent: number } | { duration: number; collapsed: boolean; start: number; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; start: number; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: number; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; collapsed: boolean; start: number; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; collapsed: boolean; start: number; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; start: number; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; dependentOn: number[]; start: number; style: { base: { fill: string; stroke: string } }; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number; parentId: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number } | { duration: number; start: number; id: number; label: string; type: string; user: string; percent: number }> {
   return [
     {
       id: 1,
@@ -69,12 +68,6 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       percent: 85,
       type: 'project',
       collapsed: true,
-      style: {
-        base: {
-          fill: null,
-          stroke: null,
-        },
-      },
     },
     {
       id: 2,
@@ -114,7 +107,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       duration: 2 * 24 * 60 * 60 * 1000,
       percent: 50,
       type: 'task',
-      dependentOn: [3]
+      dependentOn: [3],
     },
     {
       id: 5,
@@ -130,9 +123,9 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       style: {
         base: {
           fill: '#0287D0',
-          stroke: '#0077C0'
-        }
-      }
+          stroke: '#0077C0',
+        },
+      },
     },
     {
       id: 6,
@@ -141,16 +134,16 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
         '<a href="https://www.google.com/search?q=Mario+Bros" target="_blank" style="color:#0077c0;">Mario Bros</a>',
       parentId: 5,
       start: (24),
-      duration: 1 * 24 * 60 * 60 * 1000,
+      duration: 24 * 60 * 60 * 1000,
       percent: 50,
       type: 'task',
       collapsed: true,
       style: {
         base: {
           fill: '#8E44AD',
-          stroke: '#7E349D'
-        }
-      }
+          stroke: '#7E349D',
+        },
+      },
     },
     {
       id: 7,
@@ -163,7 +156,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       duration: 4 * 60 * 60 * 1000,
       percent: 20,
       type: 'task',
-      collapsed: true
+      collapsed: true,
     },
     {
       id: 8,
@@ -173,9 +166,9 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       parentId: 7,
       dependentOn: [7],
       start: (24 * 3),
-      duration: 1 * 24 * 60 * 60 * 1000,
+      duration: 24 * 60 * 60 * 1000,
       percent: 0,
-      type: 'task'
+      type: 'task',
     },
     {
       id: 9,
@@ -192,9 +185,9 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       style: {
         base: {
           fill: '#8E44AD',
-          stroke: '#7E349D'
-        }
-      }
+          stroke: '#7E349D',
+        },
+      },
     },
     {
       id: 10,
@@ -204,7 +197,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       start: (24 * 5),
       duration: 24 * 60 * 60 * 1000,
       percent: 0,
-      type: 'task'
+      type: 'task',
     },
     {
       id: 11,
@@ -214,7 +207,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       start: (24 * 6),
       duration: 24 * 60 * 60 * 1000,
       percent: 0,
-      type: 'task'
+      type: 'task',
     },
     {
       id: 12,
@@ -225,7 +218,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       duration: 24 * 60 * 60 * 1000,
       percent: 0,
       type: 'task',
-      parentId: 11
+      parentId: 11,
     },
     {
       id: 13,
@@ -235,7 +228,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       start: (24 * 8),
       duration: 24 * 60 * 60 * 1000,
       percent: 0,
-      type: 'task'
+      type: 'task',
     },
     {
       id: 14,
@@ -245,7 +238,7 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       start: (24 * 9),
       duration: 24 * 60 * 60 * 1000,
       percent: 0,
-      type: 'task'
+      type: 'task',
     },
     {
       id: 15,
@@ -255,6 +248,6 @@ export function DefaultProjectData(): ({ duration: number; collapsed: boolean; s
       start: (24 * 16),
       duration: 24 * 60 * 60 * 1000,
       percent: 0,
-      type: 'task'
+      type: 'task',
     }];
 }
