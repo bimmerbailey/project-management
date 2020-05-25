@@ -14,6 +14,7 @@
     }
   })
   export default class ProjectsViewer extends Vue {
+    // TODO: Add a watcher for data from AddTask
 
   }
 
