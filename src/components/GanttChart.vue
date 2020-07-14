@@ -1,26 +1,21 @@
 <template>
     <div>
-        <!--        <md-toolbar class="md-transparent">-->
-        <!--            <h3 class="md-title">This will be project name</h3>-->
-        <!--        </md-toolbar>-->
         <gantt-elastic
-                :options="options"
-                :tasks="tasks"
-                @tasks-changed="tasksUpdate"
+                :options="this.options"
+                :tasks="this.tasks"
                 @options-changed="optionsUpdate"
                 @dynamic-style-changed="styleUpdate"
         >
             <gantt-header slot="header" :options="this.options"></gantt-header>
         </gantt-elastic>
         <div class="q-mt-md"/>
-        <md-button class="md-raised" @click="addTask">Add Task</md-button>
-        <!--        <q-btn @click="addTask" icon="mdi-plus" label="Add task"/>-->
+                <md-button class="md-raised" @click="addTask">Add Task</md-button>
+<!--        <q-btn @click="addTask" icon="mdi-plus" label="Add task"/>-->
     </div>
 </template>
 
 <script lang="ts">
 
-  // TODO: Convert to typescript
   import {Component, Vue, Watch} from 'vue-property-decorator';
   import GanttElastic from 'gantt-elastic';
   import GanttHeader from 'gantt-elastic-header';
@@ -53,45 +48,35 @@
       return {
         tasks,
         options,
-        dynamicStyle: {},
-        // lastId: 16
+        dynamicStyle: {
+          // 'task-list-header-label': {
+          //   'font-weight': 'bold',
+          //   'color': 'black'
+          // },
+        }
+        // lastId: this.lastId,
       };
     }
 
-    // @Watch('tasks')
     addTask() {
-        this.tasks.push({
-            id: this.lastId++,
-            label:
-                '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Yeaahh! you have added a task bro!</a>',
-            user:
-                '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Awesome!</a>',
-            start: getDate(24 * 3),
-            duration: 24 * 60 * 60 * 1000,
-            percent: 50,
-            type: 'project'
-        });
-    }
-
-    // addTask() {
-    //   this.tasks.push({
-    //     id: this.lastId++,
-    //     label:
-    //       '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Yeaahh! you have added a task bro!</a>',
-    //     user:
-    //       '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Awesome!</a>',
-    //     start: getDate(24 * 3),
-    //     duration: 24 * 60 * 60 * 1000,
-    //     percent: 50,
-    //     type: 'project'
-    //   });
-    //   console.log(this.tasks);
-    // }
-
-    @Watch('updateTasks')
-    tasksUpdate(tasks: any) {
+      this.tasks.push({
+        id: this.lastId++,
+        label:
+          '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Yeaahh! you have added a task bro!</a>',
+        user:
+          '<a href="https://images.pexels.com/photos/423364/pexels-photo-423364.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" target="_blank" style="color:#0077c0;">Awesome!</a>',
+        start: getDate(24 * 3),
+        duration: 24 * 60 * 60 * 1000,
+        percent: 50,
+        type: 'project'
+      });
       this.tasks = tasks;
     }
+
+    // @Watch('updateTasks')
+    // tasksUpdate(tasks: any) {
+    //   this.tasks = tasks;
+    // }
 
     @Watch('options')
     optionsUpdate(options: any) {
@@ -103,7 +88,6 @@
       this.dynamicStyle = style;
     }
   }
-
 
   // just helper to get current dates
   function getDate(hours: number) {
@@ -123,7 +107,6 @@
   }
 
   // TODO: Make this its own ts file
-  // GanttHeader.defaultOptions.label = 'Title';
   let tasks = [
     {
       id: 1,
@@ -233,7 +216,7 @@
       parentId: 7,
       dependentOn: [7],
       start: getDate(24 * 3),
-      duration: 1 * 24 * 60 * 60 * 1000,
+      duration: 24 * 60 * 60 * 1000,
       percent: 0,
       type: 'task'
     },
@@ -318,7 +301,6 @@
       type: 'task'
     }
   ];
-
 
   let options = {
     taskMapping: {
@@ -418,9 +400,14 @@
     }
   };
 
+  // let style = {
+  //
+  // }
+
 </script>
 
 <style>
     /*TODO: Style the gantt chart to be dark to match*/
+    /* color appears to be rgb(64, 64, 64) class="gantt-elastic__main-view" */
 
 </style>
