@@ -14,7 +14,7 @@
     "core-js": "^3.6.4",
     "gantt-elastic": "^1.0.11",
     "gantt-elastic-header": "^0.1.11",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mocha": "^7.1.2",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
